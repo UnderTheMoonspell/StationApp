@@ -1,0 +1,25 @@
+{
+  "name": "stationApp",
+  "description": "",
+  "main": "",
+  "authors": [
+    "bernardo.azevedo <bernardo.azevedo@closer.pt>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/js/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.6"
+  }
+}
