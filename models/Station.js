@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 
 var StationSchema = new mongoose.Schema({
-	_id: Number,
-	name: String
-}, {collection: 'stations'});
+	name: { type: String, unique: true},
+}, {collection: 'stations',  timestamps: { createdAt: 'created_at' }});
 
 module.exports = mongoose.model('Station', StationSchema);

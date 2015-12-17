@@ -1,0 +1,3 @@
+-Comando para Debug: node-debug ./bin/www
+-O Mongoose faz o assign do nome das coleções com os schemas criados por defeito (pluraliza o nome da coleção 
+relativamente ao model) ou então ao criar o schema pode-se definir o nome da coleção
