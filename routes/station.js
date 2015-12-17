@@ -1,16 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-var mongoose = require('mongoose');
-var Station = require('../models/Station.js');
 
+var controller = require('../controllers/station');
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  Station.find(function(err, station){
-    console.log("test 2");
-    if(err) return next(err);
-    res.json(station);
-  })
-});
+router.get('/api/station', controller.getAll);
+router.get('/api/station/:id', controller.getById);
+router.delete('/api/station/:id', controller.delete);
+router.post('/api/station', controller.add);
 
 module.exports = router;

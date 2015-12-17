@@ -5,13 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes');
+var mainroute = require('./routes/index');
 var station = require('./routes/station');
+var user = require('./routes/user');
+var config = require('./config.js');
 
 var app = express();
+
 //database
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/stationApp', function(err) {
+var db = mongoose.connect(config.dbURL, function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -32,12 +35,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/api/station', station);
-// app.route('/api/station').get(function(req, res, next) {
-//       res.send("OI");
-//   }
-// )
+app.use(mainroute);
+app.use(station);
+app.use(user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
