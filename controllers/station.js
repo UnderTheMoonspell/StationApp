@@ -1,12 +1,32 @@
 var mongoose = require('mongoose');
 var Station = require('../models/station');
 
-var getAll = function(req, res, next) {
+var getStation = function(req, res, next) {
+  var searchString = req.query['search'];
+  if(searchString){
+    getByName(req, res, next, searchString);
+  }
+  else{
+    getAll(req, res, next);  
+  }
+
+};
+
+var getAll = function (req, res, next) {
   Station.find().sort({_id:1}).exec(function(err, station){
     if(err) return next(err);
     res.json(station);
   });
-};
+}
+
+var getByName = function (req, res, next, searchString) {
+  var query = {'name' : { '$regex' : '^'+searchString, '$options' : 'i'}};
+  Station.find(query).sort({name:1}).exec(function(err, station){
+    if(err) return next(err);
+    res.setHeader('searchString', searchString);
+    res.json(station);
+  });
+}
 
 var getById = function(req, res, next) {
   var id = req.params.id;
@@ -42,7 +62,7 @@ var remove = function(req, res, next) {
   });
 };
 
-module.exports.getAll = getAll;
+module.exports.getStation = getStation;
 module.exports.getById = getById;
 module.exports.delete = remove;
 module.exports.add = add;

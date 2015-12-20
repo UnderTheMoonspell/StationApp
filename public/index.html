@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/controllers/station.js"></script>
     <script type="text/javascript" src="js/services/station.js"></script>
+    <script type="text/javascript" src="js/directives/autocomplete.js"></script>
 	<script type="text/javascript" src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>	
     
     
@@ -19,14 +20,14 @@
         <div class="content-wrapper">
             <div class="col-md-12 text-align-center">
                 <h1 class="site-title">
-                    This is StationApp 2
+                    Welcome to StationApp
                 </h1>
             </div>
         </div>
     </header>
 
     <main class="row row-main-content no-margin">
-        <nav class="col-md-2 col-xs-12 col-sm-12 no-padding">
+        <nav class="col-md-2 no-padding">
             <ul id="menu" class="nav nav-pills nav-stacked">
                 <li> 
                     <a ui-sref="station">Enter</a>
@@ -34,7 +35,7 @@
                 </li>
             </ul>
         </nav>
-        <section class="content-wrapper main-content clear-fix col-md-10 col-xs-12 col-sm-12">
+        <section class="content-wrapper main-content clear-fix col-md-10">
             <div ui-view></div>
         </section>
     </main>

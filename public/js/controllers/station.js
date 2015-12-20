@@ -6,11 +6,12 @@
     controller.$inject = ['$filter', 'stationService'];
     function controller($filter, $stationsService) {
         var vm = this;
-        vm.rowCollection = $stationsService.getAll();
+        vm.stationList = null;
+            
+        $stationsService.getAll().then(getCallback);
 
-        //Se as funções forem maiores, assignamos a variavel em cima, mas definimos a função em baixo
-        vm.toggleSearch = function () {
-            vm.searchEnabled = !vm.searchEnabled;
+        function getCallback(response){
+            vm.stationList = response.data;
         }
     }
 })();

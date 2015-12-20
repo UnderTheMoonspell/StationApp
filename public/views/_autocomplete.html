@@ -1,0 +1,7 @@
+<div>
+	<label for="{{vm.id}}">Search station</label>
+	<input id="{{vm.id}}" type="text" />
+	<div id="nextLettersDiv">
+		<p ng-repeat="station in vm.stationsFound">{{station.name}}</p>
+	</div>
+</div>
