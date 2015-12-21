@@ -260,7 +260,9 @@ nav li a {
   width: 100%;
   text-align: left;
   font-family: "Montserrat", sans-serif;
-  text-decoration: initial; }
+  text-decoration: initial;
+  font-size: larger;
+  font-weight: bold; }
 
 .text-align-center {
   text-align: center; }
@@ -291,7 +293,7 @@ nav li a {
     top: 50%;
     transform: translate(-50%, -50%); }
 
-.displayNone {
+.display-none {
   display: none !important; }
 
 .form-submit {
@@ -328,10 +330,16 @@ nav li a {
   background-color: #337ab7;
   color: #fff; }
 
-#nextLettersDiv {
-  width: 100px; }
-  #nextLettersDiv p:hover {
-    background-color: #c7d1d6;
-    cursor: pointer; }
+.autocomplete-divs {
+  width: 100px;
+  display: inline-block; }
+  .autocomplete-divs p:hover {
+    background-color: #a6dbed;
+    cursor: pointer;
+    padding-left: 5px; }
+
+h6 {
+  font-size: xx-small;
+  font-style: italic; }
 
 /*# sourceMappingURL=style.css.map */

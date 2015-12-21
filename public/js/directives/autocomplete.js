@@ -19,8 +19,6 @@
             controller: controller,
             bindToController: true,
             templateUrl: '../../views/_autocomplete.html'
-            // template: '<div><label for="{{vm.id}}">Search station</label><input id="{{vm.id}}" type="text" /><div id="nextLettersDiv"><p ng-repeat="letter in vm.nextLetters">{{letter.char}}</p></div></div>'
-            // template: ''
         };
 
         return directive;
@@ -75,6 +73,7 @@
         function clearScopeStations(scope){
             scope.$apply(function(){
                 scope.vm.stationsFound = [];
+                scope.vm.nextLetters = []
             });   
         }
     }

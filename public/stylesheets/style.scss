@@ -200,6 +200,8 @@ nav {
         text-align: left;
         font-family: $navfont;
         text-decoration: initial;
+        font-size: larger;
+        font-weight: bold;
     }
 }
 
@@ -238,7 +240,7 @@ nav {
     }
 }
 
-.displayNone {
+.display-none {
     display: none !important;
 }
 
@@ -292,11 +294,17 @@ nav {
     }
 }
 
-#nextLettersDiv{
+.autocomplete-divs{
     width:100px;
-    
+    display: inline-block;
     & p:hover{
-        background-color: #c7d1d6;
+        background-color: #a6dbed;
         cursor: pointer;
+        padding-left:5px;
     }
+}
+
+h6{
+    font-size: xx-small;
+    font-style: italic;
 }

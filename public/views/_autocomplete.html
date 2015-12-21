@@ -1,7 +1,14 @@
-<div>
-	<label for="{{vm.id}}">Search station</label>
-	<input id="{{vm.id}}" type="text" />
-	<div id="nextLettersDiv">
+<div >
+	<div>
+		<label for="{{vm.id}}">Search station</label>
+		<input id="{{vm.id}}" type="text" />
+	</div>
+	<div id="nextWordsDiv" class="autocomplete-divs" ng-class="vm.stationsFound.length <= 0 ? 'display-none' : 'lala'">
+		<h6>Looking for...</h6>
 		<p ng-repeat="station in vm.stationsFound">{{station.name}}</p>
+	</div>
+	<div id="nextLettersDiv" class="autocomplete-divs" ng-class="vm.nextLetters.length <= 0 ? 'display-none' : 'lala'">
+		<h6>Next letters...</h6>
+		<p ng-repeat="letter in vm.nextLetters">{{letter.char}}</p>
 	</div>
 </div>
