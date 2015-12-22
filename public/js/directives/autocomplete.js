@@ -5,7 +5,6 @@
         .module('stationApp')
         .directive('autocomplete', autocomplete);
         
-
     autocomplete.$inject = ['stationService'];
     function autocomplete(stationService) {
         var directive = {

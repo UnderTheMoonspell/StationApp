@@ -11,7 +11,7 @@ var config = require('./config.js');
 
 var app = express();
 
-//database
+// database
 var mongoose = require('mongoose');
 var db = mongoose.connect(config.dbURL, function(err) {
     if(err) {
@@ -26,7 +26,6 @@ var db = mongoose.connect(config.dbURL, function(err) {
 app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());

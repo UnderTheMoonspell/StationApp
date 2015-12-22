@@ -1,3 +1,11 @@
--Comando para Debug: node-debug ./bin/www
+-Inicialmente correu-se o express para gerar a aplicação: express -e stationApp
+-Seja Bower ou NPM instalar sempre com --save para gravar no bower.json e no package.json respectivamente
+-Pastas de bibliotecas (que estao nos dois ficheiros anteriores) vao para o .gitignore
+-O Bower serve para instalar dependencias client side: bower install --save angular.js
+-O ficheiro .bowerrc serve para indicar a directoria default para instalação de componentes através do bower
+-Comando para Debug: nodemon && node-debug ./bin/www
 -O Mongoose faz o assign do nome das coleções com os schemas criados por defeito (pluraliza o nome da coleção 
 relativamente ao model) ou então ao criar o schema pode-se definir o nome da coleção
+-Para configurar o karma: karma init config.js
+-Para correr karma: karma start config.js
+-Para correr SASS numa pasta inteira: sass --watch .:.

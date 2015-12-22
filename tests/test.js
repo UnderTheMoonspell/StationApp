@@ -13,21 +13,32 @@ describe('Testing services with $http dependency', function() {
         expect(service).toBeDefined();
     });
 
-    it ('should return get data when calling getData', function() {
-      httpBackend.expectGET('/api/station').respond(HTTP_STATUS_CODE, {name: 'example'});
-  
-      service.getAll().then(function(result) {
-          data = result;
-      });
-
-      httpBackend.flush();
-
-    //   expect(data).toBe({name: 'example'});
+    it ('should return get data when calling getAll', function() {
+        httpBackend.expectGET('/api/station').respond({name: 'example'});
+        
+        service.getAll().then(function(result) {
+            data = result.data;
+        });
+        
+        httpBackend.flush();
+        
+        expect(data.name).toBe('example');
     });
     
+    it ('should return get data when calling getByInput', function() {
+        httpBackend.expectGET('/api/station?search=li').respond({name: 'example'});
+        
+        service.getByInput('li').then(function(result) {
+            data = result.data;
+        });
+        
+        httpBackend.flush();
+        
+        expect(data.name).toBe('example');
+    });    
+
     afterEach(function() {
-      // make sure all requests where handled as expected.
-      httpBackend.verifyNoOutstandingRequest();
-      httpBackend.verifyNoOutstandingExpectation();
+        httpBackend.verifyNoOutstandingRequest();
+        httpBackend.verifyNoOutstandingExpectation();
     });
 });

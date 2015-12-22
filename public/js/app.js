@@ -10,8 +10,6 @@
     function appConfig($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
-        //se tiver aqui os controllers n�o � preciso por no HTML
-        //o controller As � para n�o esquecer para depois se usar o vm dentro do controller
         $stateProvider
         .state('station', {
             url: '/station',

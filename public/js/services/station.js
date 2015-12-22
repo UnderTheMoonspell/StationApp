@@ -15,7 +15,7 @@
             return $http({
                 method: 'GET',
                 url: $rootScope.baseURL+'/station'
-            });           
+            });        
         };
         
         function getByInput(textinput) {
