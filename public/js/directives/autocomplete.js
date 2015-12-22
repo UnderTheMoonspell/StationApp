@@ -41,9 +41,9 @@
                 }
             });
             
-            $('#nextLettersDiv',elem).on('click', 'p', function(){
+            $('#nextWordsDiv',elem).on('click', 'p', function(){
                 $('input',elem).val($(this).text());
-                clearScopeStations(scope);   ;
+                clearScopeStations(scope);
             });
         }
     

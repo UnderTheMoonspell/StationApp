@@ -8,10 +8,14 @@
         var vm = this;
         vm.stationList = null;
             
-        $stationsService.getAll().then(getCallback);
+        $stationsService.getAll().then(successCallback, errorCallback);
 
-        function getCallback(response){
+        function successCallback(response){
             vm.stationList = response.data;
         }
+        
+        function errorCallback(response){
+            alertify.error('Error when fetching server');
+        }        
     }
 })();
