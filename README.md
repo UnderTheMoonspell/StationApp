@@ -1,6 +1,6 @@
 # StationApp
 
-Test Application for learning purposes
+Test Application for MEAN stack learning purposes. Not developed by some MEAN generator.
 
 To import files, in root directory:
 
